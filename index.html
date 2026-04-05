@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags para SEO basados en tus palabras clave -->
+    <title>Yeimy Díaz | Terapia Ocupacional Infantil en Panamá - ICLAP</title>
+    <meta name="description" content="Yeimy Díaz, especialista en terapia ocupacional infantil, integración sensorial y alimentación selectiva en Panamá (Town Center) y La Chorrera. Agenda tu evaluación.">
+    <meta name="keywords" content="Terapia ocupacional infantil en Panamá, Terapia ocupacional en La Chorrera, Terapia ocupacional Town Center Panamá, Integración sensorial Panamá, Terapia de alimentación niños Panamá, Problemas de conducta infantil Panamá, Desarrollo infantil Panamá, Terapia para niños con dificultades de aprendizaje Panamá">
+    
+    <!-- Icono de la pestaña del navegador (Favicon) -->
+    <link rel="icon" type="image/png" href="imagenes/logo-icono.png">
+
+    <!-- Tailwind CSS para diseño moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración de tus Colores Personalizados -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#7741ED',
+                            green: '#00BF62',
+                            red: '#FF5757',
+                            pink: '#FF65C3',
+                            cyan: '#5CE1E6',
+                            lightpurple: '#A67DF3'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Quicksand', sans-serif; }
+        .hero-bg {
+            background-color: #f8faff;
+            background-image: radial-gradient(#5CE1E6 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+        /* Animaciones de entrada al hacer scroll */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- NAVEGACIÓN -->
+    <nav class="fixed w-full z-50 nav-blur border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- LOGO PRINCIPAL EN EL MENÚ -->
+                <div class="flex items-center gap-3">
+                    <img src="imagenes/logo-principal.png" alt="Logo ICLAP" class="h-12 object-contain">
+                    <div>
+                        <span class="brand-font text-xl font-bold text-slate-900 block leading-tight">ICLAP</span>
+                        <span class="text-[11px] text-brand-purple font-semibold italic block max-w-[200px] leading-tight mt-0.5">"Jugamos para aprender y aprendemos para jugar"</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 font-medium">
+                    <a href="#inicio" class="hover:text-brand-pink transition">Inicio</a>
+                    <a href="#servicios" class="hover:text-brand-pink transition">Especialidades</a>
+                    <a href="#enfoque" class="hover:text-brand-pink transition">Mi Enfoque</a>
+                    <a href="#ubicacion" class="hover:text-brand-pink transition">Ubicaciones</a>
+                    <a href="#contacto" class="bg-brand-purple text-white px-5 py-2.5 rounded-full hover:bg-brand-lightpurple transition font-semibold">Agendar Cita</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-slate-600 p-2">
+                        <i data-lucide="menu" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-4 shadow-lg absolute w-full">
+            <a href="#inicio" class="block font-semibold text-slate-800">Inicio</a>
+            <a href="#servicios" class="block font-semibold text-slate-800">Especialidades</a>
+            <a href="#enfoque" class="block font-semibold text-slate-800">Mi Enfoque</a>
+            <a href="#ubicacion" class="block font-semibold text-slate-800">Ubicaciones</a>
+            <a href="#contacto" class="block text-center bg-brand-purple text-white px-5 py-3 rounded-xl font-bold mt-4">Agendar Cita</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Inicio) -->
+    <section id="inicio" class="hero-bg pt-32 pb-20 px-4 min-h-[90vh] flex items-center border-b border-brand-cyan/30">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 reveal active">
+                <div class="inline-block bg-brand-cyan/20 border border-brand-cyan/50 text-brand-purple px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider shadow-sm">
+                    Terapia Ocupacional Infantil en Panamá
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold text-slate-900 leading-tight brand-font">
+                    Soy Yeimy Díaz,<br>
+                    <span class="text-brand-pink">Especialista en Desarrollo Infantil.</span>
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed max-w-lg">
+                    Acompaño a niños y sus familias en procesos de desarrollo, conducta, aprendizaje y alimentación (selectiva), desde un enfoque profesional, respetuoso y basado en resultados.
+                </p>
+                <div class="flex flex-wrap items-center gap-3 pt-2">
+                    <a href="https://wa.me/50767353158" target="_blank" class="bg-brand-green hover:bg-[#00a353] text-white px-6 py-3 rounded-2xl font-bold transition shadow-lg shadow-green-200 flex items-center gap-2">
+                        WhatsApp <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://instagram.com/i_clap_" target="_blank" class="bg-gradient-to-r from-brand-purple to-brand-pink text-white px-6 py-3 rounded-2xl font-bold transition shadow-lg flex items-center gap-2 hover:scale-105">
+                        Instagram <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#servicios" class="bg-white text-brand-purple border border-brand-purple/30 px-6 py-3 rounded-2xl font-bold hover:bg-slate-50 transition shadow-sm">
+                        Conocer más
+                    </a>
+                    
+                    <!-- Ubicaciones movidas al lado de los botones -->
+                    <div class="flex items-center gap-4 px-2 py-2">
+                        <div class="flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="text-brand-red w-5 h-5"></i>
+                            <span class="text-sm font-bold text-slate-700">Town Center</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="text-brand-red w-5 h-5"></i>
+                            <span class="text-sm font-bold text-slate-700">La Chorrera</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FOTO DE YEIMY CON VENTANA MODAL (Ahora más grande ocupando el espacio) -->
+            <div class="relative reveal active w-full flex justify-center lg:justify-end">
+                <div class="w-full max-w-lg aspect-[4/5] bg-brand-lightpurple rounded-[2.5rem] overflow-hidden shadow-2xl relative cursor-pointer group" onclick="openProfileModal()">
+                    <!-- REEMPLAZAR ESTA IMAGEN CON LA FOTO DE TU MAMÁ -->
+                    <img src="imagenes/yeimy.jpeg" alt="Yeimy Díaz Terapia Ocupacional" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent group-hover:from-brand-purple/80 transition-colors duration-300"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white text-center">
+                        <p class="font-bold text-xl brand-font">Lic. Yeimy Díaz</p>
+                        <p class="text-sm opacity-90 mb-3">Neurorehabilitación e Integración Sensorial</p>
+                        <span class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold border border-white/30 group-hover:bg-white group-hover:text-brand-purple transition-all duration-300">
+                            Ver Perfil Profesional <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENFOQUE / POR QUÉ ELEGIRME -->
+    <section id="enfoque" class="py-24 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <!-- REEMPLAZAR CON FOTO TRABAJANDO CON NIÑOS -->
+                    <div class="rounded-[2rem] overflow-hidden shadow-xl">
+                        <img src="imagenes/terapia.jpeg" alt="Terapia ocupacional en acción" class="w-full h-auto">
+                    </div>
+                </div>
+                <div class="space-y-8 reveal">
+                    <div>
+                        <h2 class="text-4xl font-bold text-slate-900 mb-4 brand-font">Mi Enfoque</h2>
+                        <p class="text-2xl text-brand-purple font-medium italic">"No trabajo solo sesiones… trabajo procesos que generan cambios reales."</p>
+                    </div>
+                    
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        El objetivo no es “entretener al niño”, sino lograr avances visibles en su desarrollo y calidad de vida para que logre mayor independencia en su vida diaria, escolar y familiar.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-brand-green/20 p-2 rounded-lg text-brand-green shrink-0 mt-1"><i data-lucide="check" class="w-5 h-5"></i></div>
+                            <div><p class="font-bold text-slate-800">Evaluaciones completas y personalizadas</p></div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-brand-green/20 p-2 rounded-lg text-brand-green shrink-0 mt-1"><i data-lucide="check" class="w-5 h-5"></i></div>
+                            <div><p class="font-bold text-slate-800">Objetivos claros y medibles</p></div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-brand-green/20 p-2 rounded-lg text-brand-green shrink-0 mt-1"><i data-lucide="check" class="w-5 h-5"></i></div>
+                            <div><p class="font-bold text-slate-800">Acompañamiento constante a padres</p></div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-brand-green/20 p-2 rounded-lg text-brand-green shrink-0 mt-1"><i data-lucide="check" class="w-5 h-5"></i></div>
+                            <div><p class="font-bold text-slate-800">Estrategias prácticas para casa y escuela</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTADOS (Banner de confianza) -->
+    <section class="py-16 bg-brand-purple text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10 text-center reveal">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 brand-font">Porque aquí no buscas “terapia”, buscas resultados:</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+                <div class="bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/20">
+                    <i data-lucide="smile" class="w-8 h-8 mx-auto mb-3 text-brand-cyan"></i>
+                    <p class="font-semibold text-sm">Mejora en conducta</p>
+                </div>
+                <div class="bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/20">
+                    <i data-lucide="activity" class="w-8 h-8 mx-auto mb-3 text-brand-cyan"></i>
+                    <p class="font-semibold text-sm">Participación diaria</p>
+                </div>
+                <div class="bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/20">
+                    <i data-lucide="utensils" class="w-8 h-8 mx-auto mb-3 text-brand-cyan"></i>
+                    <p class="font-semibold text-sm">Avances en alimentación</p>
+                </div>
+                <div class="bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/20">
+                    <i data-lucide="book-open" class="w-8 h-8 mx-auto mb-3 text-brand-cyan"></i>
+                    <p class="font-semibold text-sm">Desempeño escolar</p>
+                </div>
+                <div class="bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/20 col-span-2 md:col-span-1">
+                    <i data-lucide="heart" class="w-8 h-8 mx-auto mb-3 text-brand-cyan"></i>
+                    <p class="font-semibold text-sm">Tranquilidad familiar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS / ESPECIALIDADES -->
+    <section id="servicios" class="py-24 px-4 bg-slate-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4 brand-font">¿En qué puedo ayudarte?</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto text-lg">Servicios especializados diseñados para las necesidades únicas de cada niño.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Servicio 1 -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 card-hover reveal">
+                    <div class="w-12 h-12 bg-brand-purple/10 text-brand-purple rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="clipboard-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 brand-font text-slate-800">Evaluación del Desarrollo</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Valoración profunda y completa para entender las bases del comportamiento y habilidades de tu hijo.</p>
+                </div>
+                
+                <!-- Servicio 2 -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 card-hover reveal">
+                    <div class="w-12 h-12 bg-brand-pink/10 text-brand-pink rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="puzzle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 brand-font text-slate-800">Terapia Ocupacional Individual</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Espacio personalizado para trabajar necesidades y objetivos a través del juego. Fortalece atención, conducta y motricidad, logrando mayor independencia y seguridad en su vida diaria.</p>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 card-hover reveal">
+                    <div class="w-12 h-12 bg-brand-cyan/20 text-teal-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="brain-circuit"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 brand-font text-slate-800">Integración Sensorial</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Ayuda a procesar mejor el entorno. A través de actividades terapéuticas, les permite regularse, mejorar su atención y desenvolverse con mayor seguridad en su vida diaria, el juego y la escuela.</p>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 card-hover reveal">
+                    <div class="w-12 h-12 bg-brand-red/10 text-brand-red rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="heart-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 brand-font text-slate-800">Conducta y Autorregulación</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Estrategias efectivas para manejar berrinches, frustración y mejorar la gestión emocional en distintos entornos.</p>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 card-hover reveal">
+                    <div class="w-12 h-12 bg-brand-green/10 text-brand-green rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="apple"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 brand-font text-slate-800">Terapia de Alimentación</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Abordaje especializado para alimentación selectiva (picky eaters), ampliando la aceptación de nuevas texturas y alimentos.</p>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 card-hover reveal">
+                    <div class="w-12 h-12 bg-brand-lightpurple/20 text-brand-purple rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="pen-tool"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 brand-font text-slate-800">Motricidad y Habilidades Escolares</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Mejoramos la escritura, atención y seguimiento de instrucciones. Al trabajar la motricidad, el niño logra mayor control y coordinación en sus manos, facilitando su aprendizaje y ganando más seguridad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UBICACIONES Y MAPAS -->
+    <section id="ubicacion" class="py-24 px-4 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4 brand-font">Atención Presencial en Panamá</h2>
+                <p class="text-slate-600 text-lg">Dos ubicaciones estratégicas para tu comodidad.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Sede 1: Town Center -->
+                <div class="bg-slate-50 p-6 rounded-[2rem] border border-slate-200 reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-brand-purple text-white rounded-full flex items-center justify-center">
+                            <i data-lucide="building-2"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold brand-font text-slate-900">Consultorios Town Center</h3>
+                            <p class="text-slate-500 text-sm">Ciudad de Panamá</p>
+                        </div>
+                    </div>
+                    <div class="h-64 rounded-xl overflow-hidden shadow-inner border border-slate-200 mb-6">
+                        <!-- Mapa genérico de Town Center Costa del Este -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.852157155099!2d-79.475472!3d9.01633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca97f48039c33%3A0xc3b469d77e11d044!2sTown%20Center%20Costa%20del%20Este!5e0!3m2!1sen!2spa!4v1700000000000!5m2!1sen!2spa" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <a href="https://wa.me/50767353158" target="_blank" class="block text-center bg-white border-2 border-brand-purple text-brand-purple py-3 rounded-xl font-bold hover:bg-brand-purple/10 transition">
+                        Agendar en Town Center
+                    </a>
+                </div>
+
+                <!-- Sede 2: La Chorrera -->
+                <div class="bg-slate-50 p-6 rounded-[2rem] border border-slate-200 reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-brand-pink text-white rounded-full flex items-center justify-center">
+                            <i data-lucide="building"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold brand-font text-slate-900">Consultorios Médicos OnDgo</h3>
+                            <p class="text-slate-500 text-sm">La Chorrera</p>
+                        </div>
+                    </div>
+                    <div class="h-64 rounded-xl overflow-hidden shadow-inner border border-slate-200 mb-6">
+                        <!-- Mapa genérico de OnDgo La Chorrera -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.879796859344!2d-79.7828!3d8.882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8facaba031d2df07%3A0x8e5f2a969b7f58a7!2sOnDgo%20La%20Chorrera!5e0!3m2!1sen!2spa!4v1700000000000!5m2!1sen!2spa" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <a href="https://wa.me/50767353158" target="_blank" class="block text-center bg-white border-2 border-brand-pink text-brand-pink py-3 rounded-xl font-bold hover:bg-brand-pink/10 transition">
+                        Agendar en La Chorrera
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER Y CONTACTO (Call to Action Final) -->
+    <section id="contacto" class="pt-24 pb-12 px-4 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-brand-purple rounded-[3rem] p-8 md:p-12 text-center mb-20 relative overflow-hidden reveal">
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 brand-font">El momento de actuar es hoy</h2>
+                    <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">La intervención temprana marca la diferencia. Agenda tu evaluación hoy y comienza a ver cambios reales en el desarrollo de tu hijo.</p>
+                    <a href="https://wa.me/50767353158" target="_blank" class="inline-flex items-center gap-3 bg-white text-brand-purple px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-xl">
+                        Escríbeme al WhatsApp <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <!-- Círculos decorativos fondo -->
+                <div class="absolute top-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-0 w-96 h-96 bg-white opacity-5 rounded-full translate-x-1/3 translate-y-1/3"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12 border-b border-slate-800 pb-12">
+                <!-- Info -->
+                <div class="md:col-span-1">
+                    <!-- LOGO BLANCO EN EL FOOTER -->
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="imagenes/logo-blanco.png" alt="Logo ICLAP Blanco" class="h-12 object-contain">
+                        <span class="brand-font text-2xl font-bold">ICLAP</span>
+                    </div>
+                    <p class="text-slate-400 mb-6">Atención profesional con enfoque en resultados. Terapia ocupacional infantil por Yeimy Díaz.</p>
+                </div>
+                
+                <!-- Contacto -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 uppercase tracking-wider text-slate-300">Contacto Directo</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="https://wa.me/50767353158" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-white transition">
+                                <i data-lucide="phone" class="w-5 h-5 text-brand-cyan"></i> +507 6735-3158
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:icanlearnandplay@gmail.com" class="flex items-center gap-3 text-slate-400 hover:text-white transition">
+                                <i data-lucide="mail" class="w-5 h-5 text-brand-cyan"></i> icanlearnandplay@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/i_clap_" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-white transition">
+                                <i data-lucide="instagram" class="w-5 h-5 text-brand-cyan"></i> @i_clap_
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Ubicaciones -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 uppercase tracking-wider text-slate-300">Sedes</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-slate-400">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-brand-red shrink-0 mt-1"></i>
+                            <span>Consultorios Town Center<br>Ciudad de Panamá</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-400">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-brand-red shrink-0 mt-1"></i>
+                            <span>Consultorios Médicos OnDgo<br>La Chorrera</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center text-slate-500 text-sm">
+                <p>&copy; 2024 Yeimy Díaz - ICLAP (I Can Learn And Play). Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/50767353158" target="_blank" class="fixed bottom-6 right-6 bg-brand-green text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center group">
+        <i data-lucide="phone" class="w-6 h-6 animate-pulse"></i>
+        <!-- Tooltip -->
+        <span class="absolute right-16 bg-white text-slate-800 text-sm font-bold px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity shadow-lg whitespace-nowrap pointer-events-none">
+            ¡Escríbeme!
+        </span>
+    </a>
+
+    <!-- VENTANA MODAL DEL PERFIL (Oculta por defecto) -->
+    <div id="profile-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center">
+        <!-- Fondo oscuro con desenfoque que cierra al hacer clic -->
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="closeProfileModal()"></div>
+        
+        <!-- Tarjeta del Perfil -->
+        <div class="bg-white rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative z-10 p-8 m-4 shadow-2xl transform scale-100 transition-transform">
+            <button onclick="closeProfileModal()" class="absolute top-6 right-6 text-slate-400 hover:text-brand-red transition-colors bg-slate-100 p-2 rounded-full">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            
+            <div class="flex items-center gap-6 mb-8 border-b border-slate-100 pb-6 mt-4">
+                <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-brand-lightpurple shrink-0">
+                    <img src="imagenes/yeimy.jpeg" alt="Yeimy Díaz" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold brand-font text-brand-purple">Lic. Yeimy Díaz</h3>
+                    <p class="text-brand-pink font-semibold">Terapeuta Ocupacional Infantil</p>
+                </div>
+            </div>
+            
+            <div class="space-y-5 text-slate-600 text-lg leading-relaxed">
+                <p>
+                    <strong>Yeimy Díaz</strong> es Licenciada en Terapia Ocupacional por la Universidad Especializada de las Américas, con Postgrado en Neurorehabilitación Pediátrica por la misma institución. Cuenta con certificación en Integración Sensorial por la University of Southern California y un Diplomado en Intervención en Trastornos del Neurodesarrollo por la Universidad Católica de Cuyo.
+                </p>
+                <p>
+                    Con experiencia profesional desde 2012, su perfil se fundamenta en la evaluación e intervención integral del desarrollo infantil, abordando áreas como la integración sensorial, la conducta, el aprendizaje, la psicomotricidad y el desempeño en el entorno escolar. Ha complementado su formación con cursos y talleres especializados que fortalecen su práctica clínica basada en evidencia.
+                </p>
+                <p>
+                    Su enfoque terapéutico se centra en comprender al niño de manera global, promoviendo su participación, autonomía y bienestar en los diferentes contextos de su vida.
+                </p>
+                
+                <div class="bg-brand-cyan/10 p-6 rounded-2xl border border-brand-cyan/20 mt-8">
+                    <h4 class="font-bold text-brand-purple mb-4 flex items-center gap-2">
+                        <i data-lucide="award" class="w-5 h-5"></i> Formación Destacada
+                    </h4>
+                    <ul class="list-none space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="graduation-cap" class="w-6 h-6 text-brand-purple shrink-0 mt-0.5"></i>
+                            <span><strong class="text-slate-800">Licenciatura en Terapia Ocupacional</strong><br><span class="text-sm text-slate-500">Universidad Especializada de las Américas</span></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="book-open" class="w-6 h-6 text-brand-pink shrink-0 mt-0.5"></i>
+                            <span><strong class="text-slate-800">Postgrado en Neurorehabilitación Pediátrica</strong><br><span class="text-sm text-slate-500">Universidad Especializada de las Américas</span></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="award" class="w-6 h-6 text-brand-green shrink-0 mt-0.5"></i>
+                            <span><strong class="text-slate-800">Certificación en Integración Sensorial</strong><br><span class="text-sm text-slate-500">University of Southern California</span></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="brain" class="w-6 h-6 text-brand-cyan shrink-0 mt-0.5"></i>
+                            <span><strong class="text-slate-800">Diplomado en Intervención en Trastornos del Neurodesarrollo</strong><br><span class="text-sm text-slate-500">Universidad Católica de Cuyo</span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Inicializar Iconos
+        lucide.createIcons();
+
+        // Menú Móvil
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isHidden = mobileMenu.classList.contains('hidden');
+            menuIcon.setAttribute('data-lucide', isHidden ? 'menu' : 'x');
+            lucide.createIcons();
+        });
+
+        // Cerrar menú móvil al clickear un link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        // Efecto Reveal al hacer scroll (Aparición suave de elementos)
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            for (let i = 0; i < reveals.length; i++) {
+                let windowHeight = window.innerHeight;
+                let elementTop = reveals[i].getBoundingClientRect().top;
+                let elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Ejecutar al cargar
+
+        // Funciones para la Ventana Modal del Perfil
+        function openProfileModal() {
+            const modal = document.getElementById('profile-modal');
+            modal.classList.remove('hidden');
+            // Bloquear el scroll de la página de fondo
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons(); // Recargar iconos por si acaso
+        }
+
+        function closeProfileModal() {
+            const modal = document.getElementById('profile-modal');
+            modal.classList.add('hidden');
+            // Restaurar el scroll de la página de fondo
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
